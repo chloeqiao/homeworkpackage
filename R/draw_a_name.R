@@ -19,6 +19,7 @@ draw_a_name<-function(the_name, the_sex){
   data(prenoms)
   assert_that(not_empty(prenoms))
   assert_that(is.character(the_name))
+  assert_that(see_if(the_sex %in% c("M","F")))
 
   prenoms %>%
     filter(name==the_name,sex==the_sex) %>%
